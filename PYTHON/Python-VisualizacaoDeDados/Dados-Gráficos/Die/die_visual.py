@@ -1,3 +1,4 @@
+# sourcery skip: for-index-underscore
 from die import Die
 
 import pygal
@@ -30,4 +31,4 @@ hist.y_title = "Frequency of Result"
 
 
 hist.add('D6', frenquencies)
-hist.render_to_file('DADOS_GRAFICOS/die_visual.svg')
+hist.render_to_file('PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Die/die_visual.svg')
