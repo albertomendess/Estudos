@@ -15,14 +15,14 @@ for roll_num in range(1000):
 
 
 # Analiza os resultados
-frenquencies = []
+frequencies = []
 max_result = die_1.num_sides + die_2.num_sides
 for value in range(2, max_result+1):
     frequency = results.count(value)
-    frenquencies.append(frequency)
+    frequencies.append(frequency)
 
 
-# Vizualiza os resultados
+# Visualiza os resultados
 hist = pygal.Bar()
 
 
@@ -32,5 +32,5 @@ hist.x_title = "Result"
 hist.y_title = "Frequency of Result"
 
 
-hist.add('D6 + D6', frenquencies)
+hist.add('D6 + D6', frequencies)
 hist.render_to_file('PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Die/dice_visual.svg')
