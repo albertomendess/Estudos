@@ -3,7 +3,7 @@ from random import choice
 class RandonWalk():
     """Uma classe para gerar passeios aleatórios."""
 
-    def __init__(self, num_points=5000):
+    def __init__(self, num_points=20):
         """Inicia os atributos de um passeio."""
         self.num_points = num_points
         
