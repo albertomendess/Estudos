@@ -1,36 +1,30 @@
-import pygal
+from plotly.graph_objs import Bar, Layout
+from plotly import offline
 
 from die import Die
 
-# Cria dois dados D6
-die_1 = Die()
-die_2 = Die()
+
+# Cria dois dados D6.
+die_1, die_2 = Die(), Die()
 
 
-# Faz alguns lançamentos e armazena os resultados em uma lista
-results = []
-for roll_num in range(1000):
-    result = die_1.roll() + die_2.roll()
-    results.append(result)
+# Faz alguns lançamentos e armazena os resultados em uma lista.
+results = [die_1.roll() + die_2.roll() for roll_num in range(1000)]
 
 
-# Analiza os resultados
-frequencies = []
+# Analiza os resultados.
 max_result = die_1.num_sides + die_2.num_sides
-for value in range(2, max_result+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+frequencies = [results.count(value) for value in range(2, max_result+1)]
 
 
-# Visualiza os resultados
-hist = pygal.Bar()
+# Visualiza os resultados.
+x_values = list(range(2, max_result+1))
+data = [Bar(x=x_values, y=frequencies)]
 
 
-hist.title = "Results of rolling two D6 dice 1000 times."
-hist.x_labels = [str(x) for x in range(2, max_result.num_sides+1)]
-hist.x_title = "Result"
-hist.y_title = "Frequency of Result"
-
-
-hist.add('D6 + D6', frequencies)
-hist.render_to_file('PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Die/dice_visual.svg')
+x_axis_config = {'title': 'Result', 'dtick': 1}
+y_axis_config = {'title': 'Frequency of Result'}
+my_layout = Layout(title="Results of rolling two D6 dice 1000 times.",
+    xaxis=x_axis_config, yaxis=y_axis_config)
+offline.plot({'data': data, 'layout': my_layout}, 
+    filename='PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Die/D6_D6.html')
