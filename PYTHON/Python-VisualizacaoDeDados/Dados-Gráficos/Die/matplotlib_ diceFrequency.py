@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 die_1 = Die()
 die_2 = Die()
 
-attempts = 10000
+attempts = 10_000
+x_results = range(2, 13)
 
 # Faz alguns lançamentos e armazena os resultados em uma lista
 results = []
@@ -24,7 +25,7 @@ for value in range(2, max_result+1):
     frequencies.append(frequency)
 
 
-plt.plot(frequencies, linewidth=5)
+plt.plot(x_results, frequencies, linewidth=5)
 
 
 # Define o título do gráfico e nomeia os eixos
