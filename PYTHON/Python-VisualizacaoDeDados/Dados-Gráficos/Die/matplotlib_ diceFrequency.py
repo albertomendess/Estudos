@@ -3,29 +3,23 @@ from die import Die
 import matplotlib.pyplot as plt
 
 
-# Criando dois dados D6
-die_1 = Die()
-die_2 = Die()
+# Criando dois dados D6.
+die_1, die_2 = Die(), Die()
 
 attempts = 10_000
 x_results = range(2, 13)
 
-# Faz alguns lançamentos e armazena os resultados em uma lista
-results = []
-for roll_num in range(attempts):
-    result = die_1.roll() + die_2.roll()
-    results.append(result)
+# Faz alguns lançamentos e armazena os resultados em uma lista.
+results = [die_1.roll() + die_2.roll() for roll_num in range(attempts)]
 
 
-# Analiza os resultados
-frequencies = []
+# Analiza os resultados.
 max_result = die_1.num_sides + die_2.num_sides
-for value in range(2, max_result+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+frequencies = [results.count(value) for value in range(2, max_result+1)]
 
 
-plt.plot(x_results, frequencies, linewidth=5)
+# Usando o matplotlib
+plt.bar(x_results, frequencies, color='green')
 
 
 # Define o título do gráfico e nomeia os eixos
