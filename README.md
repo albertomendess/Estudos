@@ -1,2 +1,2 @@
 # Estudos
- Repositório para mostrar o que estou estudadando diariamente
+ Repositório para estudos diários.
