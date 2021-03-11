@@ -11,14 +11,11 @@ with open(filename) as f:
 
     dates, highs, lows = [], [], []
     for row in reader:
-        current_date = datetime.strptime(row[0], "%Y-%m-%d")
-        dates.append(current_date)
+        dates.append(datetime.strptime(row[0], "%Y-%m-%d"))
 
-        high = int(row[1])
-        highs.append(high)
+        highs.append(int(row[1]))
 
-        low = int(row[3])
-        lows.append(low)
+        lows.append(int(row[3]))
 
 
 # Faz plotagem dos dados.
