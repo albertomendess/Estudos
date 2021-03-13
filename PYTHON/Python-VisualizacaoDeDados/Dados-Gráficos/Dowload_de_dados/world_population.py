@@ -1,5 +1,7 @@
 import json
 
+from country_codes import get_country_code
+
 # Carrega os dados em uma lista
 filename = 'Estudos/PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Dowload_de_dados/population_data.json'
 
@@ -12,3 +14,8 @@ for pop_dict in pop_data:
         country_name = pop_dict['Country Name']
         population = int(float(pop_dict['Value']))
         print(country_name + ": " + str(population))
+        code = get_country_code(country_name)
+        if code:
+            print(f"{code} : {str(population)}")
+        else:
+            print(f"ERROR - {country_name}")
