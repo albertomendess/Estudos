@@ -14,12 +14,8 @@ with open(filename) as f:
         country = row[0]
         countries.append(country)
 
-        try:
-            population = int(row[63])
-        except ValueError:
-            pass
-        else:
-            populations.append(population)
+        population = int(row[63])
+        populations.append(population)
     
 # Exibe a população de cada país em 2019.
 cc_populations = {}
