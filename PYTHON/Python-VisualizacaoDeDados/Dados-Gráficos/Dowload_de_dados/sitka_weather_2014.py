@@ -4,7 +4,7 @@ from datetime import datetime
 from matplotlib import pyplot as plt
 
 # Obtém as datas e as temperaturas máximas e mínimas do arquivo.
-filename = 'PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Dowload_de_dados/sitka_weather_2014.csv'
+filename = 'Estudos/PYTHON/Python-VisualizacaoDeDados/Dados-Gráficos/Dowload_de_dados/sitka_weather_2014.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
