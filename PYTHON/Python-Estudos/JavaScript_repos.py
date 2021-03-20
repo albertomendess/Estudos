@@ -26,7 +26,7 @@ for repo_dict in repo_dicts:
     plot_dicts.append(plot_dict)
 
 # Cria a vizualização.
-my_style = LS('#226622', base_style=LCS)
+my_style = LS('#FFFF33', base_style=LCS)
 
 my_config = pygal.Config()
 my_config.x_label_rotation = 45
