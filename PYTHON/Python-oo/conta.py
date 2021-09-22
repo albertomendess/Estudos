@@ -13,31 +13,29 @@ class Conta:
     def extrato(self):
         print(f"Saldo de $ {self.__saldo} do titular {self.__titular}")
 
-
     def depositar(self, valor):
         self.__saldo += valor
-
 
     def sacar(self, valor):
         self.__saldo -= valor
 
-
     def transferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
-
     
-    def get_saldo(self):
+
+    @property
+    def saldo(self):
         return self.__saldo
 
+    @property
+    def titular(self):
+        return self.__titular.title()
 
-    def get_titular(self):
-        return self.__titular
-
-
-    def get_limite(self):
+    @property
+    def limite(self):
         return self.__limite
 
-    
-    def set_limite(self, limite):
+    @limite.setter
+    def limite(self, limite):
         self.__limite = limite
