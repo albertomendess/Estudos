@@ -1,10 +1,9 @@
+class Retangulo:
 
+    def __init__(self, x, y):
+        self.__x = x
+        self.__y = y
+        self.__area = x * y
 
-def criar_conta(numero, titular, saldo, limite):
-    conta = {
-        'numero': numero,
-        'titular': titular,
-        'saldo': saldo,
-        'limite': limite,
-        }
-    return conta
+    def obter_area(self):
+        return self.__area
