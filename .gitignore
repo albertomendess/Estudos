@@ -11,3 +11,5 @@ PYTHON/Python-oo/teste.py
 PYTHON/Python-oo/teste.py
 *.py
 PYTHON/Python-oo/teste.py
+!PYTHON/Python-oo/
+!*.py
